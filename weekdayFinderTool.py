@@ -38,6 +38,13 @@ class Item:
                 break
             iter = iter._next
         return iter
+        
+    def showList(self):
+        iter = self.first()
+        while iter._next is not None:
+            print(iter._object)
+            iter = iter._next
+        print(iter._object)
 #end        
         
 #functions for finding the day of the week
@@ -151,6 +158,7 @@ def pastIncident():
         #incidentList = Item()
         incidentList2 = []
         count = 1
+        incidentDaysList = Item()
         while True:
             try:
                 incident = int(input('Enter days without incident one by one (enter any letter(s) or [ENTER] to stop): '))
@@ -165,6 +173,7 @@ def pastIncident():
                 print(f'Incident {count} occured on {weekday._object}')
                 print('=' * 40)
                 print(' ')
+                incidentDaysList.append(weekday._object)
                 count += 1
             except ValueError:
                 #incidentList.showList()
@@ -175,6 +184,7 @@ def pastIncident():
         sumof = sum(incidentList2)
         print(f'Value Total: {sumof}')
         print(f'values entered: {count - 1}')
+        incidentDaysList.showList()
     
     #past Incident option selection
     

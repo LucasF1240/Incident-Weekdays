@@ -184,6 +184,7 @@ def pastIncident():
         sumof = sum(incidentList2)
         print(f'Value Total: {sumof}')
         print(f'values entered: {count - 1}')
+        print('Days where an incident occured: ')
         incidentDaysList.showList()
     
     #past Incident option selection
